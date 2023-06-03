@@ -1,0 +1,55 @@
+<html>
+	<head>
+        <meta charset = "utf-8" />
+          
+        <title>
+            Home | Jiege Blog
+		</title>
+	<style>
+		h1 {
+		font-family: "verdana"
+		}
+	
+		h2 {
+		font-family: "verdana"
+		}
+	
+	</style>
+        <link rel = "icon" href = 
+"https://i.pinimg.com/750x/7a/76/95/7a769594fba98fc1240ecda211dfd17a.jpg" 
+        type = "image/x-icon">
+          
+    </head>
+	<body style = "background-color: white">
+		<h1 style="font-size:3em; ">Jiege Blog</h1>
+		<center><img src = "https://i.pinimg.com/750x/e3/29/a6/e329a618814b930571d8f5efd1c22a65.jpg"></center>
+		<center><h1 style="font-size:3em; ">Windows 11 Insider Preview Build 25381.1</h1></center>
+		<center><br><h1 style="font-size:3em; ">What’s new in Build 25381</h1></br></center>
+		<center><h1>SMB signing requirement changes</h1></center>
+		<center><h2>Beginning with Windows 11 Insider Preview Build 25381 Enterprise editions, SMB signing is now required by default for all connections. This changes legacy behavior, where Windows 10 and 11 required SMB signing by default only when connecting to shares named SYSVOL and NETLOGON and where Active Directory domain controllers required SMB signing when any client connected to them. This is part of a campaign to improve the security of Windows and Windows Server for the modern landscape.</h2></center>
+		<center><h2>ㅤ</h2></center>
+		<center><h2>All versions of Windows and Windows Server support SMB signing. But a third-party might disable or not support it. If you attempt to connect to a remote share on a third-party SMB server that that does not allow SMB signing, you may receive the one of following error messages:</h2></center>
+		<center><h2><br>· 0xc000a000</br></h2></center>
+		<center><h2><br>· -1073700864</br></h2></center>
+		<center><h2><br>· STATUS_INVALID_SIGNATURE</br></h2></center>
+		<center><h2><br>· The cryptographic signature is invalid.</br></h2></center>
+		<center><h2><br>· STATUS_INVALID_SIGNATURE</br></h2></center>
+		<center><h2><br>To resolve this issue, configure your third-party SMB server to support SMB signing. This is Microsoft’s official recommended guidance. Do not disable SMB signing in Windows or use SMB1 to work around this behavior (SMB1 supports signing but does not enforce it). An SMB device that does not support signing allows interception and relay attacks from malicious parties.</br></h2></center>
+		<center><h2><br>SMB signing can reduce the performance of SMB copy operations. You can mitigate this with more physical CPU cores or virtual CPUs as well as newer, faster CPUs.</br></h2></center>
+		<center><h2><br>To see the current SMB signing settings, run the following PowerShell commands:</br></h2></center>
+		<center><h1><br>Get-SmbServerConfiguration | fl requiresecuritysignature</br></h1></center>
+		<center><h2><br>To disable the requirement for SMB signing in client (outbound to other device) connections, run the following PowerShell command as an elevated administrator:</br></h2></center>
+		<center><h1><br>Set-SmbClientConfiguration -RequireSecuritySignature $false</br></h1></center>
+		<center><h2><br>To disable the requirement for SMB signing in server (on Windows 11 Insider Preview Build 25381 and higher with Enterprise edition devices), run the following PowerShell command as an elevated administrator:</br></h2></center>
+		<center><h2><br>Set-SmbServerConfiguration -RequireSecuritySignature $false</br></h2></center>
+		<center><h2><br>No reboot is required but existing SMB connections will still use signing until they are closed.</br></h2></center>
+		<center><br><h1 style="font-size:3em; ">Changes and Improvements</h1></br></center>
+		<center><br><h1 style="font-size:2em; ">[General]</h1></br></center>
+		<center><h2><br>· If a camera streaming issue is detected such as a camera failing to start or a closed camera shutter, a pop-up dialog will appear with the recommendation to launch the automated Get Help troubleshooter to resolve the issue.</br></h2></center>
+		
+		
+		<br><center><h1 style="font-size:3em; ">Notice</h1></center></br>
+		<center><h1>This website is about Windows Insider Preview canary channel, but you cannot see history of canary channel.</h1><center>
+		<b><h1 style="color:grey;font-size:10px;">Copyright-2023 Jiege</h1></b>
+	</body>
+</html>
